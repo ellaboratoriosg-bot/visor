@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hair Transplant Design · Vista 3D</title>
+<meta name="description" content="Mira el cartel de Hair Transplant Design en 3D y en tu pared, a su tamaño real.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hair Transplant Design · Mira tu cartel en 3D">
+<meta property="og:description" content="Gíralo, enciéndele la luz y ponlo en tu pared con la cámara del teléfono.">
+<meta property="og:image" content="https://ellaboratoriosg-bot.github.io/visor/hair-transplant/og.jpg">
+<meta property="og:url" content="https://ellaboratoriosg-bot.github.io/visor/hair-transplant/">
+<meta name="theme-color" content="#070738">
+<link rel="icon" href="../assets/el-laboratorio.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+  onerror="var s=document.createElement('script');s.type='module';s.src='https://cdn.jsdelivr.net/npm/@google/model-viewer@4.0.0/dist/model-viewer.min.js';document.head.appendChild(s)"></script>
+<style>
+:root{--azul:#070738;--cian:#00AEEF;--mag:#EC008C;--ama:#FFF200;--gris:#E7E8EF;--suave:#4A4A6A;--pared:#F3E8D8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:#fff;color:var(--azul);font-family:Poppins,system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0 10px}
+header img{width:150px;display:block}
+.tag{font-size:12px;font-weight:600;color:var(--suave);text-align:right;line-height:1.3}
+.tag b{display:block;color:var(--mag);font-size:13px}
+h1{font-size:clamp(26px,7vw,40px);font-weight:700;line-height:1.1;margin-top:14px;letter-spacing:-.01em}
+.sub{font-size:15px;color:var(--suave);margin-top:6px}
+.med{display:inline-block;background:var(--azul);color:#fff;font-size:13px;font-weight:600;border-radius:99px;padding:3px 12px;margin-top:10px}
+.visor{position:relative;margin-top:18px;border-radius:20px;overflow:hidden;background:radial-gradient(ellipse at 50% 30%,#FBF4EA 0%,var(--pared) 70%);aspect-ratio:4/3.4;max-height:72vh;width:100%}
+model-viewer{width:100%;height:100%;--poster-color:transparent;background:transparent}
+.ar-btn{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:var(--mag);color:#fff;border:0;border-radius:99px;font:700 16px Poppins,system-ui,sans-serif;padding:13px 22px;display:flex;align-items:center;gap:9px;box-shadow:0 6px 18px rgba(236,0,140,.35);white-space:nowrap}
+.ar-btn svg{width:22px;height:22px;fill:#fff}
+.chip{position:absolute;top:12px;right:12px;z-index:5;background:#fff;color:var(--azul);border:0;border-radius:99px;font:600 13px Poppins,system-ui,sans-serif;padding:8px 14px 8px 10px;display:flex;align-items:center;gap:7px;box-shadow:0 2px 10px rgba(7,7,56,.12)}
+.chip i{width:14px;height:14px;border-radius:50%;background:#FFD98A;box-shadow:0 0 8px 3px rgba(255,200,110,.9)}
+.chip.off i{background:#C9C9D6;box-shadow:none}
+.carga{position:absolute;left:0;right:0;top:0;height:4px;background:var(--gris)}
+.carga span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ama),var(--mag),var(--cian));transition:width .2s}
+.hint{font-size:14px;color:var(--suave);margin-top:12px}
+.aviso{display:none;margin-top:12px;background:#FFF8D6;border-radius:14px;padding:12px 14px;font-size:14px}
+.aviso.on{display:block}
+h2{font-size:22px;font-weight:700;margin-top:38px;line-height:1.2}
+h2 small{display:block;font-size:14px;font-weight:400;color:var(--suave);margin-top:4px}
+.escena{position:relative;margin-top:14px;border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(180deg,#F6EDE0 0%,#EADCC7 78%,#CDBBA3 78.4%,#D8C8B1 100%);touch-action:none;user-select:none;-webkit-user-select:none}
+.escena img.fondo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+.escena img.logo{position:absolute;left:50%;top:42%;width:72%;transform-origin:center;transform:translate(-50%,-50%);pointer-events:none;-webkit-user-drag:none}
+.escena .ayuda{position:absolute;left:12px;bottom:12px;background:rgba(7,7,56,.72);color:#fff;font-size:12px;border-radius:99px;padding:5px 11px}
+.controles{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;align-items:center}
+.btn{border:0;border-radius:99px;font:600 15px Poppins,system-ui,sans-serif;padding:11px 18px;display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.btn.prim{background:var(--azul);color:#fff}
+.btn.sec{background:var(--gris);color:var(--azul)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+.tam{display:flex;align-items:center;gap:10px;width:100%;font-size:13px;font-weight:600;color:var(--suave)}
+.tam input{flex:1;accent-color:var(--mag)}
+ul.det{list-style:none;margin-top:14px;display:grid;gap:10px}
+ul.det li{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+ul.det li:before{content:"";flex:none;width:12px;height:12px;border-radius:50%;background:var(--cian);margin-top:6px}
+ul.det li:nth-child(2):before{background:var(--mag)}
+ul.det li:nth-child(3):before{background:var(--ama);border:1px solid #E5D800}
+.nota{font-size:12px;color:var(--suave);margin-top:16px}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:34px;background:var(--mag);color:#fff;text-decoration:none;font-weight:700;font-size:17px;border-radius:16px;padding:16px}
+.cta svg{width:24px;height:24px;fill:#fff}
+footer{margin-top:34px;padding-bottom:calc(46px + env(safe-area-inset-bottom))}
+footer .fila{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px}
+footer img{width:min(300px,100%);display:block}
+footer p{font-size:12px;color:var(--suave);line-height:1.5}
+.liq{position:fixed;left:0;right:0;bottom:0;height:18px;display:flex;flex-direction:column;z-index:10}
+.liq i{flex:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="../assets/el-laboratorio.svg" alt="El Laboratorio · soluciones gráficas">
+    <div class="tag"><b>vista previa 3D</b>propuesta de cartel</div>
+  </header>
+
+  <h1>Hair Transplant Design</h1>
+  <p class="sub">Así se verá tu cartel. Gíralo, enciéndele la luz y ponlo en tu pared.</p>
+  <span class="med">72.44" × 14.02"</span>
+
+  <div class="visor">
+    <div class="carga" id="carga"><span></span></div>
+    <button class="chip" id="luz3d" type="button"><i></i><span>Luz encendida</span></button>
+    <model-viewer id="mv" src="modelo.glb" poster="poster.jpg" alt="Cartel Hair Transplant Design en 3D"
+      ar ar-modes="webxr scene-viewer quick-look" ar-placement="wall" ar-scale="fixed"
+      camera-controls touch-action="pan-y" interaction-prompt="auto"
+      camera-orbit="0deg 90deg auto" min-camera-orbit="-65deg 55deg auto" max-camera-orbit="65deg 125deg auto"
+      environment-image="neutral" tone-mapping="neutral" exposure="1" shadow-intensity="0">
+      <button slot="ar-button" class="ar-btn" type="button">
+        <svg viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Zm0 2.3 6.6 3.7L12 11.7 5.4 8 12 4.3ZM5 9.7l6 3.4v6.6l-6-3.4V9.7Zm8 10v-6.6l6-3.4v6.6l-6 3.4Z"/></svg>
+        Ver en mi pared
+      </button>
+    </model-viewer>
+  </div>
+  <p class="hint" id="hint">Gira el cartel con el dedo para ver el relieve. Con <b>Ver en mi pared</b>, apunta la cámara a la pared y el cartel aparece a su tamaño real.</p>
+  <p class="aviso" id="sinAR">Este teléfono no permite ver el cartel en realidad aumentada desde aquí. Pruébalo con una foto de tu pared, aquí abajo.</p>
+
+  <h2>Pruébalo con una foto de tu pared<small>Toma o sube una foto y mueve el cartel con el dedo. Con dos dedos lo agrandas o lo achicas.</small></h2>
+  <div class="escena" id="escena">
+    <img class="fondo" id="fondo" alt="">
+    <img class="logo" id="logo" src="logo-encendido.png" alt="Cartel Hair Transplant Design">
+    <span class="ayuda" id="ayuda">Pared de ejemplo</span>
+  </div>
+  <div class="controles">
+    <label class="btn prim" for="foto">
+      <svg viewBox="0 0 24 24"><path d="M9 3 7.2 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.2L15 3H9Zm3 5a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+      Tomar o subir foto
+    </label>
+    <input type="file" id="foto" accept="image/*" hidden>
+    <button class="btn sec" id="luzFoto" type="button"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2Zm-3 18h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1Z"/></svg><span>Apagar luz</span></button>
+    <button class="btn sec" id="bajar" type="button"><svg viewBox="0 0 24 24"><path d="M11 3h2v9.2l3.3-3.3 1.4 1.4L12 16l-5.7-5.7 1.4-1.4 3.3 3.3V3ZM4 19h16v2H4v-2Z"/></svg>Guardar imagen</button>
+    <div class="tam"><span>Tamaño</span><input type="range" id="tam" min="15" max="140" value="72"></div>
+  </div>
+
+  <h2>Cómo es el cartel</h2>
+  <ul class="det">
+    <li>Todo en acrílico, del mismo grosor.</li>
+    <li>«Hair Transplant» va separado de la pared con snaps y retroiluminado en blanco cálido.</li>
+    <li>«Design» va pegado directo a la pared.</li>
+  </ul>
+  <p class="nota">Imagen de referencia. Los colores y el brillo pueden variar según la pantalla y la luz del lugar.</p>
+
+  <a class="cta" href="https://wa.me/13055188902?text=Hola%2C%20vi%20la%20vista%203D%20del%20cartel%20Hair%20Transplant%20Design" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.2-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.3-.3-.3-.7-.5Z"/></svg>
+    Escríbenos por WhatsApp
+  </a>
+
+  <footer>
+    <div class="fila">
+      <img src="../assets/contacto.svg" alt="305.518.8902 · @el_laboratorio_sg">
+      <p>El Laboratorio SG LLC<br>12343 SW 132nd Ct, Miami, FL 33186</p>
+    </div>
+  </footer>
+</div>
+<div class="liq"><i style="background:var(--ama)"></i><i style="background:var(--mag)"></i><i style="background:var(--cian)"></i></div>
+
+<script>
+(function(){
+  var mv=document.getElementById('mv'),carga=document.querySelector('#carga span'),luz3d=document.getElementById('luz3d');
+  var encendida=true;
+  function aplicarLuz(){
+    luz3d.classList.toggle('off',!encendida);
+    luz3d.querySelector('span').textContent=encendida?'Luz encendida':'Luz apagada';
+    try{var m=mv.model&&mv.model.getMaterialByName('Luz calida');if(m)m.pbrMetallicRoughness.setBaseColorFactor([1,1,1,encendida?1:0]);}catch(e){}
+  }
+  luz3d.addEventListener('click',function(){encendida=!encendida;aplicarLuz();});
+  mv.addEventListener('progress',function(e){var p=e.detail.totalProgress;carga.style.width=(p*100)+'%';if(p>=1)setTimeout(function(){carga.parentNode.style.display='none'},400);});
+  mv.addEventListener('load',function(){aplicarLuz();setTimeout(function(){if(!mv.canActivateAR)document.getElementById('sinAR').classList.add('on');},800);});
+  mv.addEventListener('ar-status',function(e){if(e.detail.status==='failed')document.getElementById('sinAR').classList.add('on');});
+  setTimeout(function(){if(!window.customElements||!customElements.get('model-viewer')){document.getElementById('sinAR').classList.add('on');}},9000);
+
+  // ---- Modo foto
+  var esc=document.getElementById('escena'),logo=document.getElementById('logo'),fondo=document.getElementById('fondo'),tam=document.getElementById('tam'),ayuda=document.getElementById('ayuda');
+  var st={x:.5,y:.42,w:.72},on=true,ptrs={},pinch=null;
+  function pinta(){logo.style.left=(st.x*100)+'%';logo.style.top=(st.y*100)+'%';logo.style.width=(st.w*100)+'%';tam.value=Math.round(st.w*100);}
+  pinta();
+  tam.addEventListener('input',function(){st.w=tam.value/100;pinta();});
+  document.getElementById('luzFoto').addEventListener('click',function(){on=!on;logo.src=on?'logo-encendido.png':'logo-apagado.png';this.querySelector('span').textContent=on?'Apagar luz':'Encender luz';});
+  document.getElementById('foto').addEventListener('change',function(){var f=this.files&&this.files[0];if(!f)return;var u=URL.createObjectURL(f);fondo.onload=function(){fondo.style.display='block';ayuda.textContent='Mueve el cartel con el dedo';};fondo.src=u;});
+  function pos(e){var r=esc.getBoundingClientRect();return{x:(e.clientX-r.left)/r.width,y:(e.clientY-r.top)/r.height,r:r};}
+  esc.addEventListener('pointerdown',function(e){esc.setPointerCapture(e.pointerId);ptrs[e.pointerId]=pos(e);var k=Object.keys(ptrs);if(k.length===2){var a=ptrs[k[0]],b=ptrs[k[1]];pinch={d:Math.hypot((a.x-b.x)*a.r.width,(a.y-b.y)*a.r.height),w:st.w};}});
+  esc.addEventListener('pointermove',function(e){if(!ptrs[e.pointerId])return;var p=pos(e),prev=ptrs[e.pointerId];ptrs[e.pointerId]=p;var k=Object.keys(ptrs);
+    if(k.length===2&&pinch){var a=ptrs[k[0]],b=ptrs[k[1]];var d=Math.hypot((a.x-b.x)*a.r.width,(a.y-b.y)*a.r.height);st.w=Math.min(1.4,Math.max(.15,pinch.w*d/pinch.d));}
+    else if(k.length===1){st.x=Math.min(1,Math.max(0,st.x+p.x-prev.x));st.y=Math.min(1,Math.max(0,st.y+p.y-prev.y));}
+    pinta();});
+  function suelta(e){delete ptrs[e.pointerId];if(Object.keys(ptrs).length<2)pinch=null;}
+  esc.addEventListener('pointerup',suelta);esc.addEventListener('pointercancel',suelta);
+
+  document.getElementById('bajar').addEventListener('click',function(){
+    var r=esc.getBoundingClientRect(),W=1600,H=Math.round(W*r.height/r.width),c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');
+    if(fondo.style.display==='block'&&fondo.naturalWidth){var s=Math.max(W/fondo.naturalWidth,H/fondo.naturalHeight),fw=fondo.naturalWidth*s,fh=fondo.naturalHeight*s;x.drawImage(fondo,(W-fw)/2,(H-fh)/2,fw,fh);}
+    else{var g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#F6EDE0');g.addColorStop(.78,'#EADCC7');g.addColorStop(.784,'#CDBBA3');g.addColorStop(1,'#D8C8B1');x.fillStyle=g;x.fillRect(0,0,W,H);}
+    var lw=st.w*W,lh=lw*logo.naturalHeight/logo.naturalWidth;x.drawImage(logo,st.x*W-lw/2,st.y*H-lh/2,lw,lh);
+    c.toBlob(function(b){var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='hair-transplant-design-en-mi-pared.jpg';document.body.appendChild(a);a.click();a.remove();},'image/jpeg',.9);
+  });
+})();
+</script>
+</body>
+</html>
