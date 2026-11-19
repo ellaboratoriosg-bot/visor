@@ -1,0 +1,18 @@
+<!doctype html><html><body style="margin:0;background:#eadfce">
+<script type="importmap">{"imports":{"three":"./three/build/three.module.js","three/addons/":"./three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+import {USDZExporter} from 'three/addons/exporters/USDZExporter.js';
+const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});r.setSize(1400,700);r.setClearColor(0xeadfce);document.body.appendChild(r.domElement);
+r.toneMapping=THREE.NeutralToneMapping;
+const sc=new THREE.Scene();const pm=new THREE.PMREMGenerator(r);sc.environment=pm.fromScene(new RoomEnvironment(),0.04).texture;
+const wall=new THREE.Mesh(new THREE.PlaneGeometry(6,3),new THREE.MeshStandardMaterial({color:0xeadfce,roughness:1}));sc.add(wall);
+const cam=new THREE.PerspectiveCamera(35,2,0.01,50);
+window.shot=async(ang)=>{const d=window.D||2.6;cam.position.set(Math.sin(ang)*d,0,Math.cos(ang)*d);cam.lookAt(0,0,0.02);r.render(sc,cam);return r.domElement.toDataURL('image/png')};
+new GLTFLoader().load('modelo.glb',async g=>{sc.add(g.scene);const b=new THREE.Box3().setFromObject(g.scene);
+ window.info={size:b.getSize(new THREE.Vector3()).toArray().map(v=>(v/0.0254).toFixed(2)),meshes:[]};g.scene.traverse(o=>{if(o.isMesh)window.info.meshes.push(o.name+':'+o.material.name+':'+o.geometry.attributes.position.count)});
+ try{const u=await new USDZExporter().parseAsync(g.scene);window.info.usdz=u.byteLength}catch(e){window.info.usdz='ERR '+e.message}
+ window.ready=true},undefined,e=>{window.info={err:String(e)};window.ready=true});
+</script></body></html>
