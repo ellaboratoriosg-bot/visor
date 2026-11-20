@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hair Transplant Design · Mira tu cartel en 3D">
 <meta property="og:description" content="Gíralo, enciéndele la luz y ponlo en tu pared con la cámara del teléfono.">
-<meta property="og:image" content="https://ellaboratoriosg-bot.github.io/visor/hair-transplant/og.jpg">
+<meta property="og:image" content="https://ellaboratoriosg-bot.github.io/visor/hair-transplant/og.jpg?v=2">
 <meta property="og:url" content="https://ellaboratoriosg-bot.github.io/visor/hair-transplant/">
 <meta name="theme-color" content="#070738">
 <link rel="icon" href="../assets/el-laboratorio.svg">
@@ -81,12 +81,12 @@ footer p{font-size:12px;color:var(--suave);line-height:1.5}
 
   <h1>Hair Transplant Design</h1>
   <p class="sub">Así se verá tu cartel. Gíralo, enciéndele la luz y ponlo en tu pared.</p>
-  <span class="med">72.44" × 14.02"</span>
+  <span class="med">74.5" × 19.2"</span>
 
   <div class="visor">
     <div class="carga" id="carga"><span></span></div>
     <button class="chip" id="luz3d" type="button"><i></i><span>Luz encendida</span></button>
-    <model-viewer id="mv" src="modelo.glb" poster="poster.jpg" alt="Cartel Hair Transplant Design en 3D"
+    <model-viewer id="mv" src="modelo.glb?v=2" poster="poster.jpg?v=2" alt="Cartel Hair Transplant Design en 3D"
       ar ar-modes="webxr scene-viewer quick-look" ar-placement="wall" ar-scale="fixed"
       camera-controls touch-action="pan-y" interaction-prompt="auto"
       camera-orbit="0deg 90deg auto" min-camera-orbit="-65deg 55deg auto" max-camera-orbit="65deg 125deg auto"
@@ -103,7 +103,7 @@ footer p{font-size:12px;color:var(--suave);line-height:1.5}
   <h2>Pruébalo con una foto de tu pared<small>Toma o sube una foto y mueve el cartel con el dedo. Con dos dedos lo agrandas o lo achicas.</small></h2>
   <div class="escena" id="escena">
     <img class="fondo" id="fondo" alt="">
-    <img class="logo" id="logo" src="logo-encendido.png" alt="Cartel Hair Transplant Design">
+    <img class="logo" id="logo" src="logo-encendido.png?v=2" alt="Cartel Hair Transplant Design">
     <span class="ayuda" id="ayuda">Pared de ejemplo</span>
   </div>
   <div class="controles">
@@ -119,9 +119,9 @@ footer p{font-size:12px;color:var(--suave);line-height:1.5}
 
   <h2>Cómo es el cartel</h2>
   <ul class="det">
+    <li>Cada sección («Hair», «Transplant» y «Design») lleva su base de acrílico blanco contorneada, con las letras encima.</li>
+    <li>Las tres bases van separadas de la pared con snaps y retroiluminadas en blanco cálido.</li>
     <li>Todo en acrílico, del mismo grosor.</li>
-    <li>«Hair Transplant» va separado de la pared con snaps y retroiluminado en blanco cálido.</li>
-    <li>«Design» va pegado directo a la pared.</li>
   </ul>
   <p class="nota">Imagen de referencia. Los colores y el brillo pueden variar según la pantalla y la luz del lugar.</p>
 
@@ -160,7 +160,7 @@ footer p{font-size:12px;color:var(--suave);line-height:1.5}
   function pinta(){logo.style.left=(st.x*100)+'%';logo.style.top=(st.y*100)+'%';logo.style.width=(st.w*100)+'%';tam.value=Math.round(st.w*100);}
   pinta();
   tam.addEventListener('input',function(){st.w=tam.value/100;pinta();});
-  document.getElementById('luzFoto').addEventListener('click',function(){on=!on;logo.src=on?'logo-encendido.png':'logo-apagado.png';this.querySelector('span').textContent=on?'Apagar luz':'Encender luz';});
+  document.getElementById('luzFoto').addEventListener('click',function(){on=!on;logo.src=on?'logo-encendido.png?v=2':'logo-apagado.png?v=2';this.querySelector('span').textContent=on?'Apagar luz':'Encender luz';});
   document.getElementById('foto').addEventListener('change',function(){var f=this.files&&this.files[0];if(!f)return;var u=URL.createObjectURL(f);fondo.onload=function(){fondo.style.display='block';ayuda.textContent='Mueve el cartel con el dedo';};fondo.src=u;});
   function pos(e){var r=esc.getBoundingClientRect();return{x:(e.clientX-r.left)/r.width,y:(e.clientY-r.top)/r.height,r:r};}
   esc.addEventListener('pointerdown',function(e){esc.setPointerCapture(e.pointerId);ptrs[e.pointerId]=pos(e);var k=Object.keys(ptrs);if(k.length===2){var a=ptrs[k[0]],b=ptrs[k[1]];pinch={d:Math.hypot((a.x-b.x)*a.r.width,(a.y-b.y)*a.r.height),w:st.w};}});
